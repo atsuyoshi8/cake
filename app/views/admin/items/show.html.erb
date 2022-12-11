@@ -1,0 +1,20 @@
+<div class="col-md-8 offset-md-1">
+  		<h2>商品詳細</h2>
+  		<table class="table">
+  		  <tbody>
+  		    <tr>
+  		      <td>
+  		         <%= link_to item_path(@item.id) do%>
+  		           <%= image_tag @item.user.get_profile_image(100,100)%>
+  		         <% end %>
+  		      </td>
+  		      <td><%= link_to @item.name, items_path(@item) %></td>
+  		      <td><%= @item.body %>
+  		      </td>
+  		      <td><%= link_to "Edit", edit_admin_item_path(@item) %>
+            </td>
+
+  		    </tr>
+        </tbody>
+      </table>
+</div>
