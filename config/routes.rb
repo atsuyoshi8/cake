@@ -17,8 +17,11 @@ devise_for :admin, skip: [:registrations, :passwords] ,controllers: {
   scope module: :public do
     root to: "homes#top"
     get 'homes/about' => 'homes#about',as:'about'
+    get 'customers/:my_page' => 'customers#show'
+    get 'customers/information/edit' => 'customers#edit'
+    get 'customers/unsubscribe' => 'customers#unsubscribe'
     resources:items,only:[:index,:show]
-    resources:customers,only:[:index,:edit,:create,:update,:destroy]
+    resources:customers,only:[:show,:index,:edit,:create,:update,:destroy]
     resources:cart_items,only:[:index,:update,:destroy,:destroy_all,:create]
     resources:orders,only:[:new,:confilm,:complete,:create,:index,:show]
     resources:addresses,only:[:index,:edit,:create,:update,:destroy]

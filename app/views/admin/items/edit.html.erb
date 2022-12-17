@@ -1,7 +1,7 @@
 <h1>商品編集</h1>
 
 
-<%= form_with model: @items, url: admin_items_path, method: :PATCH do |f| %>
+<%= form_with model: @items, url: admin_item_path(@items.id), method: :PATCH do |f| %>
 <div class="form-group">
   <label for="item_name">商品名</label>
   <br><%= f.text_field :name %>
