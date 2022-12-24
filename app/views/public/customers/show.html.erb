@@ -1,0 +1,46 @@
+<h1>マイページ</h1>
+
+<main>
+  <p id="notice"></p>
+<div class="container px-5 px-sm-0">
+  <div class="row">
+
+<div class="col-md-8 offset-md-1">
+  		<h2>登録情報</h2>
+  		<table class="table">
+  		  <tbody>
+  		    <tr>
+
+  		      <td><%= link_to "編集する", customers_information_edit_path(@customer) %></td>
+            <td><%= @customer.last_name %></td>
+            <td><%= @customer.last_name_kana %></td>
+            <td><%= @customer.last_name %></td>
+            <td><%= @customer.postal_code %></td>
+            <td><%= @customer.address %></td>
+            <td><%= @customer.telephone_number %></td>
+            <td><%= @customer.email %></td>
+            <td><%= link_to "配送先一覧", addresses_path(@customer) %></td>
+            <td><%= link_to "注文履歴", orders_path(@customer) %></td>
+
+  		    </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+ </div>
+<table class="table table-striped">
+<div class="text-success">
+  <%= flash[:notice] %>
+</div>
+<div class="text-danger">
+  <%= flash[:alret] %>
+</div>
+</main>
+
+
+
+
+
+
+
+
